@@ -6,25 +6,25 @@ class DiceTest {
     @Test
     public void testDiceOne() {
         Dice dice;
-        dice = new Dice(2);
-        int results = dice.getTossedDies(); //Act
-        Assertions.assertEquals(2, results); //Assert
+        dice = new Dice(1);
+        int results = dice.getDies(); //Act
+        Assertions.assertEquals(1, results); //Assert
     }
 
     @Test
     public void testDiceTwo() {
         Dice dice;
-        dice = new Dice(2, 5);
+        dice = new Dice(2, 6);
         int results = dice.getSixSides(); //Act
-        Assertions.assertEquals(5, results); //Assert
+        Assertions.assertEquals(6, results); //Assert
     }
 
     @Test
     public void testTossedDiesOne() {
         Dice dice;
-        dice = new Dice(2);
+        dice = new Dice(4);
         int tossSum = dice.tossAndSum(); //Act
-        boolean results = tossSum >= 2 && 12 >= tossSum;
+        boolean results = tossSum >= 4 && 24 >= tossSum;
         Assertions.assertTrue(results); //Assert
     }
 }

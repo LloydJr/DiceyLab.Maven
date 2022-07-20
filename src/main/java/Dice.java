@@ -1,22 +1,26 @@
 import java.util.Random;
 
 public class Dice {
-    private final int tossedDies;
-    private int sixSides;
+    public static void setRandomNumber(Random randomNumber) {
+        Dice.randomNumber = randomNumber;
+    }
+
+    private final int dies;
+    private final int sixSides;
     public static Random randomNumber = new Random();
 
-    public Dice(int tossedDies) {
-        this.tossedDies = tossedDies;
+    public Dice(int dies) {
+        this.dies = dies;
         this.sixSides = 6;
     }
 
     public Dice(int tossedDies, int sixSides) {
-        this.tossedDies = tossedDies;
+        this.dies = tossedDies;
         this.sixSides = sixSides;
     }
 
-    public int getTossedDies() {
-        return tossedDies;
+    public int getDies() {
+        return dies;
     }
 
     public int getSixSides() {
@@ -25,7 +29,7 @@ public class Dice {
 
     public int tossAndSum() {
         int sumOfDice = 0;
-        for (int i = 0; i < tossedDies; i++) {
+        for (int i = 0; i < dies; i++) {
             sumOfDice += randomNumber.nextInt(sixSides) + 1;
         }
         return sumOfDice;
