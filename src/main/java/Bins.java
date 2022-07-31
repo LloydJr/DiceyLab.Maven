@@ -2,21 +2,17 @@ import java.sql.Array;
 import java.util.*;
 
 public class Bins {
-
-     int diceNumber;
-     int totalSim;
-
-    public Bins(int diceNumber, int totalSim) {
-        this.diceNumber = diceNumber;
-        this.totalSim = totalSim;
+    ArrayList<Integer> results;
+    public Bins (int maximum) {
+        results = new ArrayList<>(Collections.nCopies(maximum + 1, 0));
     }
-
-    public int[] numberOfRolls(){
-        Dice dies = new Dice(diceNumber);
-        int[] results = new int [diceNumber * 6];
-
-            for (int i = 0; i < totalSim; i++)
-            results[dies.tossAndSum() - 1] += 1;
-        return results;
+    public Integer getBin(int bin) {
+        return this.results.get(bin);
+    }
+    public void add(int bin) {
+        results.set(bin, results.get(bin) + 1);
+    }
+    public int size() {
+        return results.size();
     }
 }

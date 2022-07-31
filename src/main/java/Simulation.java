@@ -1,7 +1,7 @@
+import java.util.Objects;
+
 public class Simulation {
 
     public static void main(String[] args){
-
-        Bins results = new Bins(2, 1000000);
     }
 }
